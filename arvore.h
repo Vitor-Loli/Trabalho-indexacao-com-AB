@@ -3,9 +3,21 @@
 
 #include "mapa.h"
 
-int altura (Mapa *m);
-Mapa* cria (void);
-void mostra (Mapa *m);
-Mapa *insere (Mapa *m, int chave, int d);
+struct NoId {
+    Produto *produto;
+    NoId *esq;
+    NoId *dir;
+};
 
-#endif //ARVORE_H
+struct NoPreco {
+    Produto *produto;
+    NoPreco *esq;
+    NoPreco *dir;
+};
+
+struct Sistema {
+    NoId *raiz_id;
+    NoPreco *raiz_preco;
+};
+
+#endif
